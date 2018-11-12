@@ -13,8 +13,9 @@
 #print("QUERY_STRİNG2:",query2)
 #dict2 = dict(pair.split('=')for pair in query2.split('&'))
 
-degisken="QUERY_STRING=adi=can&soyadi=aydın&yas=35&il=izmir"
+degisken="QUERY_STRING='adi=can&soyadi=aydın&yas=35&il=izmir'"
 x=degisken[13:]
 print(x)
-sozluk=dict(pair.split("=") for pair in x.split("&"))
+xYeni=x.replace("'","")
+sozluk=dict(pair.split("=") for pair in xYeni.split("&"))
 print(sozluk)
